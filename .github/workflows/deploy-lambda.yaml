@@ -26,7 +26,7 @@ jobs:
         go-version: '1.22.x'
      
      - name: Install GO dependencies
-       run: go get ./lambda/.
+       run: go get -u github.com/aws/aws-lambda-go
      
      - name: Build the lambda
        run: go build -o bootstrap ./lambda/main.go 
