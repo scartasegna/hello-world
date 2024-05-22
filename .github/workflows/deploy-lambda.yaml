@@ -52,6 +52,6 @@ jobs:
        uses: youyo/aws-cdk-github-actions@v2
        with:
          cdk_subcommand: 'deploy'
-         cdk_stack: 'hello-world-stack'
+         cdk_stack: 'HelloWorldStack'
          cdk_args: '--require-approval never' # This is a toy example, so we don't need to approve changes
          actions_comment: false
