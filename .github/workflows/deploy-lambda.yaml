@@ -24,16 +24,19 @@ jobs:
        uses: actions/setup-go@v5
        with:       
         go-version: '1.22.x'
+       working-directory: lambda
      
      - name: Install GO dependencies
        run: go get -u github.com/aws/aws-lambda-go
      
      - name: Build the lambda
        run: go build -o bootstrap ./lambda/main.go 
+       working-directory: lambda
 
      - name: zip the artifact
        run: |
            zip ./lambda/helloWolrdGo.zip bootstrap
+       working-directory: lambda
 
 
      - name: Configure AWS credentials
