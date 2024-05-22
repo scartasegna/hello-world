@@ -29,11 +29,11 @@ jobs:
        run: go get .
 
      - name: Build the lambda
-       run: go build -o bootstrap ../../lambda/main.go 
+       run: go build -o bootstrap ./lambda/main.go 
 
      - name: zip the artifact
        run: |
-           zip helloWolrdGo.zip bootstrap
+           zip ./lambda/helloWolrdGo.zip bootstrap
 
 
      - name: Configure AWS credentials
