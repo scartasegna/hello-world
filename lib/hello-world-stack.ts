@@ -11,13 +11,12 @@ export class HelloWorldStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    //Where the compiled Go code will be
     new s3.Bucket(this, 'myCodeBucket', {
       versioned: true,
       removalPolicy: cdk.RemovalPolicy.DESTROY
     });
     
-     // Golang binaries must have a place where they are uploaded to s3 as a .zip
+    // Golang binaries must have a place where they are uploaded to s3 as a .zip
      const asset = new assets.Asset(this, 'ExampleFunctionZip', {
       path: path.join(__dirname, '../lambda/helloWolrdGo.zip'),
     });
