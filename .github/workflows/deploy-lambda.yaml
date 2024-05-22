@@ -37,7 +37,7 @@ jobs:
      - name: zip the artifact
        working-directory: lambda
        run: |
-           zip ./lambda/helloWolrdGo.zip bootstrap
+           zip helloWolrdGo.zip bootstrap
        
 
 
