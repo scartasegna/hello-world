@@ -2,8 +2,12 @@
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
 import { HelloWorldStack } from '../lib/hello-world-stack';
+//add the AWS role to allow deploys
+import { TrustStack } from "../lib/TrustStack";
+
 
 const app = new cdk.App();
+new TrustStack(app, "TrustStack", {})
 new HelloWorldStack(app, 'HelloWorldStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
