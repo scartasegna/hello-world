@@ -28,6 +28,9 @@ jobs:
      - name: Install GO dependencies
        run: go get .
 
+     - name: get runner structure
+       run: ls -ltr
+     
      - name: Build the lambda
        run: go build -o bootstrap ./lambda/main.go 
 
