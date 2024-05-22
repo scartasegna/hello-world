@@ -19,7 +19,7 @@ func init() {
 	r := gin.Default()
 	r.GET("/hello", func(c *gin.Context) {
 		c.JSON(200, gin.H{
-			"message": "Hello Wolrd from GO - V2",
+			"message": "Hello Wolrd from GO - Demo Test",
 		})
 	})
 	ginLambda = ginadapter.New(r)
