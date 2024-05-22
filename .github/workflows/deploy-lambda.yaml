@@ -12,7 +12,6 @@ on:
    branches:
      - master
 
-
 jobs:
  deploy_lambda_stack:
    runs-on: ubuntu-latest
