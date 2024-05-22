@@ -31,7 +31,7 @@ jobs:
      
      - name: Build the lambda
        working-directory: lambda
-       run: go build -o bootstrap ./lambda/main.go 
+       run: go build -o bootstrap ./main.go 
        
 
      - name: zip the artifact
