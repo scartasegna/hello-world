@@ -3,13 +3,16 @@
 To make this project work, you need:
 
 - An AWS account where all resources will be deployed
-- [Node.js + CDK ](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html)] in your local environment
+- [Node.js + CDK ](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html) in your local environment
 
- The project is divided into two stacks:
+The project is divided into two stacks:
 
  - **TrustStack**: This is responsible for creating an IAM identity provider (OpenID Connect), a role and a policy to enable trust between AWS account and GitHub Action for the org/repo/branch
 
  - **HelloWorldStack**: an S3 bucket where the Go artifact to be deployed, the object to be uploaded (zipped Go artifact), the Lambda function and the ApiGateway with the resource 
+
+Also while executing the actions a simple hello world Go Project that respond  with a  message that will be built. The artifact will be deployed in a lambda function and served via the /hello GET resource in the API Gateway
+
 
 ### Creating the trust between AWS and GitHub
 
