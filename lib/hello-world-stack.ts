@@ -23,7 +23,7 @@ export class HelloWorldStack extends cdk.Stack {
 
     // Define the Lambda function resource
     const helloWorldFunction = new lambda.Function(this, 'HelloWorldFunction', {
-      runtime: lambda.Runtime.PROVIDED_AL2023, // Choose any supported Node.js runtime
+      runtime: lambda.Runtime.PROVIDED_AL2023, 
       handler: 'main', // Points to the 'hello' file in the lambda directory
       code: lambda.Code.fromBucket(
         asset.bucket,

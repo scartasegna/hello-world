@@ -32,21 +32,17 @@ jobs:
        working-directory: lambda
        run: go build -o bootstrap ./main.go 
        
-
      - name: zip the artifact
        working-directory: lambda
        run: |
            zip helloWolrdGo.zip bootstrap
        
-
-
      - name: Configure AWS credentials
        uses: aws-actions/configure-aws-credentials@v3
        with:
          role-to-assume: ${{ secrets.AWS_GITHUB_ACTIONS_ROLE }}
          aws-region: ${{ vars.AWS_TARGET_REGION }}
          role-session-name: "GitHubActions-DeployLayerStack"
-
 
      - name: Deploy hello-world-stack (via CDK)
        uses: youyo/aws-cdk-github-actions@v2
