@@ -23,7 +23,7 @@ jobs:
        uses: actions/setup-go@v5
        with:       
         go-version: '1.22.x'   
-        cached: false    
+        cache: false    
      
      - name: Install GO dependencies
        working-directory: lambda
@@ -39,7 +39,7 @@ jobs:
            zip helloWolrdGo.zip bootstrap
        
      - name: Configure AWS credentials
-       uses: aws-actions/configure-aws-credentials@v3
+       uses: aws-actions/configure-aws-credentials@v4
        with:
          role-to-assume: ${{ secrets.AWS_GITHUB_ACTIONS_ROLE }}
          aws-region: ${{ vars.AWS_TARGET_REGION }}
